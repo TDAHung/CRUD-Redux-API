@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { IinitialState } from "../../reducers/samplePageSlice";
 import { IValueSample } from "../../reducers/samplePageSlice";
 import methodAPI from "../../api/callAPI";
+import { Button } from "@mui/material";
 
 interface Iprops{
     setIsEdit: React.Dispatch<React.SetStateAction<number>>, 
@@ -40,8 +41,8 @@ const SamplePageShow = ({setIsEdit, setDataSubmit} : Iprops) =>{
         <td>{element.id}</td>
         <td>{element.name}</td>
         <td>{element.title}</td>
-        <button onClick={()=>{handleRemove(element)}}>Delete</button>
-        <button onClick={()=>{handleEdit(element, index)}}>Edit</button>
+        <Button onClick={()=>{handleRemove(element)}}>Delete</Button>
+        <Button onClick={()=>{handleEdit(element, index)}}>Edit</Button>
       </tr>
     });
   }

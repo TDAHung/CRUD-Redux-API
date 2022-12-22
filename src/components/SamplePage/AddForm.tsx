@@ -8,6 +8,7 @@ import { nanoid } from '@reduxjs/toolkit';
 // import Interface
 import { IValueSample } from '../../reducers/samplePageSlice';
 import methodAPI from '../../api/callAPI';
+import Button from '@mui/material/Button';
 
 const valueSample: IValueSample = {
     id: '',
@@ -53,7 +54,7 @@ const AddForm = ({isEdit,setIsEdit, dataSubmit, setDataSubmit} : Iprops) =>{
     <form action="" onSubmit={(event)=>{onSubmit(event)}}>
       <input type="text" name="name" value={dataSubmit.name} onChange={(event)=>{onChangeInput(event)}}/>
       <input type="text" name="title" value={dataSubmit.title} onChange={(event)=>{onChangeInput(event)}}/>
-      <button type="submit">Submit</button>
+      <Button type="submit">Submit</Button>
     </form>
   );
 }

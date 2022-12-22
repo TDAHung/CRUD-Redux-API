@@ -11,7 +11,12 @@ import { IinitialState } from "../../reducers/samplePageSlice";
 import { IValueSample } from "../../reducers/samplePageSlice";
 import methodAPI from "../../api/callAPI";
 
-const SamplePageShow = ({setIsEdit, setDataSubmit} : { setIsEdit: any, setDataSubmit: any}) =>{
+interface Iprops{
+    setIsEdit: React.Dispatch<React.SetStateAction<number>>, 
+    setDataSubmit: React.Dispatch<React.SetStateAction<IValueSample>>,
+};
+
+const SamplePageShow = ({setIsEdit, setDataSubmit} : Iprops) =>{
   const SamplePageData = useAppSelector(SamplePage);
   const dispatch = useAppDispatch();
 

@@ -15,7 +15,14 @@ const valueSample: IValueSample = {
     title: ''
   };
 
-const AddForm = ({isEdit,setIsEdit, dataSubmit, setDataSubmit} : {isEdit: number,setIsEdit: any, dataSubmit: IValueSample, setDataSubmit: any}) =>{
+interface Iprops{
+    isEdit: number,
+    setIsEdit: React.Dispatch<React.SetStateAction<number>>, 
+    dataSubmit: IValueSample, 
+    setDataSubmit: React.Dispatch<React.SetStateAction<IValueSample>>,
+}
+
+const AddForm = ({isEdit,setIsEdit, dataSubmit, setDataSubmit} : Iprops) =>{
   //state and actions from Slice
   const dispatch = useAppDispatch();
 
